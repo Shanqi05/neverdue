@@ -1,0 +1,329 @@
+/* --- Base Styles --- */
+.contact-page-container {
+    background-color: #f1f5f9; /* Slightly darker grey for better contrast */
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    padding-bottom: 60px;
+}
+
+/* --- Hero Section --- */
+.contact-hero {
+    height: 450px; /* Taller hero */
+    position: relative;
+    background-image:
+            linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)),
+            url('https://buxtonconsulting.com/bxt/uploads/2024/11/sales-assistant-being-employed-customer-care-support-job-working-telemarketing-call-center-helpdesk-female-receptionist-with-helpline-service-helping-clients-remote-communication_482257-43021-1170x570.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    /* Clip path for a modern angled bottom edge */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    margin-bottom: -100px; /* Allows content to overlap */
+}
+
+.contact-hero-content {
+    transform: translateY(-30px);
+}
+
+.contact-hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.contact-hero-content p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+/* --- Main Layout & Overlap --- */
+.contact-content-wrapper {
+    padding: 0 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10; /* Ensures it sits on top of hero */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.5fr; /* Left slightly narrower */
+    gap: 30px;
+    align-items: stretch; /* Makes both cards same height */
+}
+
+/* Shared Premium Card Style */
+.item-card {
+    border-radius: 24px; /* More rounded corners */
+    /* Deep, soft shadow for floating effect */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- LEFT COLUMN: The Premium Dark Panel --- */
+.info-details.dark-panel {
+    background: linear-gradient(145deg, #1e293b, #0f172a); /* Dark slate gradient */
+    color: white;
+    padding: 50px 40px;
+    border-left: none; /* Removed old border */
+}
+
+.info-details h3 {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.panel-subtitle {
+    color: #94a3b8;
+    margin-bottom: 40px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+/* New Icon Box style */
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.info-row strong {
+    display: block;
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.info-row p {
+    margin: 0;
+    font-size: 1rem;
+    color: #cbd5e1; /* Lighter gray text */
+    line-height: 1.5;
+}
+
+.dark-divider {
+    background: rgba(255,255,255,0.1);
+    height: 2px;
+    margin: 40px 0;
+}
+
+/* --- Social Cards (Dark Theme Version) --- */
+.social-links-section h3 { font-size: 1.4rem; }
+
+.social-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 16px 20px;
+    border-radius: 16px;
+    /* Semi-transparent background for dark theme */
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-icon {
+    font-size: 1.6rem;
+    margin-right: 15px;
+}
+
+.social-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-text .platform {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.social-text .username {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 700;
+}
+
+/* Hover Effects for Socials */
+.social-card:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+.social-card.instagram:hover .social-icon { color: #d62976; }
+.social-card.twitter:hover .social-icon { color: #1DA1F2; }
+.social-card.facebook:hover .social-icon { color: #1877F2; }
+
+
+/* --- RIGHT COLUMN: Form Section (Clean White) --- */
+.form-container {
+    padding: 50px 40px;
+    background: white;
+}
+
+.section-header {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.form-subtitle {
+    color: #64748b;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.form-group { margin-bottom: 30px; }
+
+.form-group label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 10px;
+}
+
+/* Input Wrapper for Icons */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 16px 16px 16px 50px; /* Extra left padding for icon */
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+    box-sizing: border-box;
+}
+
+/* Textarea needs less left padding if no icon used there */
+.form-group textarea {
+    padding: 16px;
+    height: 140px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #764ba2; /* Purple focus color */
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.1); /* Subtle glow */
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradient button */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -10px rgba(118, 75, 162, 0.5);
+}
+
+/* Success Message Modernized */
+.success-message {
+    text-align: center;
+    padding: 80px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.success-icon-box {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    background: #d1fae5;
+    color: #10b981;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+}
+.success-message h3 { font-size: 2rem; color: #1e293b; }
+.success-message p { font-size: 1.2rem; color: #64748b; max-width: 400px; margin: 10px auto 30px;}
+
+.btn-reset {
+    background: white;
+    border: 2px solid #e2e8f0;
+    padding: 12px 30px;
+    border-radius: 12px;
+    color: #64748b;
+    font-weight: 700;
+    cursor: pointer;
+    transition:all 0.2s;
+}
+.btn-reset:hover {
+    border-color: #764ba2; color: #764ba2; background: #f8fafc;
+}
+
+/* --- Animation & Mobile --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeInUp 0.8s ease-out; }
+
+@media (max-width: 900px) {
+    .contact-hero { height: 400px; margin-bottom: -50px; clip-path: none;}
+    .contact-hero-content h1 { font-size: 3rem; }
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .info-details.dark-panel, .form-container {
+        padding: 40px 30px;
+    }
+}
