@@ -64,7 +64,7 @@ const About = () => {
     hero: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80",
     about: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
     mission: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
-    director: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+    director: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
     culture: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
     university: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
     partner: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80"
@@ -151,18 +151,17 @@ const About = () => {
             </div>
           </div>
 
-          <div className="about-card row-card" onClick={() => handleCardClick('university')}>
+          <div className="about-card row-card" onClick={() => navigate('/about/university-program')} style={{ cursor: 'pointer' }}>
             <img src={images.university} className="row-card-img" alt="University Program" />
             <div className="card-body">
               <h3>University Program</h3>
               <p>We scout top talents for our elite internship cohorts every semester from global universities.</p>
-              {activeCard === 'university' && (
-                <div className="card-expanded">
-                  <p><strong>Duration:</strong> 3-6 months internship programs</p>
-                  <p><strong>Opportunities:</strong> Real projects, mentorship, full-time offers</p>
-                  <p><strong>Apply:</strong> careers@neverdue.com</p>
-                </div>
-              )}
+              <div className="card-expanded">
+                <p><strong>Duration:</strong> 3-6 months internship programs</p>
+                <p><strong>Opportunities:</strong> Real projects, mentorship, full-time offers</p>
+                <p><strong>Apply:</strong> careers@neverdue.com</p>
+                <p style={{ marginTop: '15px', color: '#db2777', fontWeight: '600' }}>Click to learn more →</p>
+              </div>
             </div>
           </div>
         </div>

@@ -31,6 +31,7 @@ import MissionVision from './pages/about/MissionVision';
 import OurDirector from './pages/about/OurDirector';
 import LifeAtNeverDue from './pages/about/LifeAtNeverDue';
 import BecomePartner from './pages/about/BecomePartner';
+import UniversityProgram from './pages/about/UniversityProgram';
 
 import './App.css'; // Make sure this import is here
 
@@ -74,6 +75,7 @@ function App() {
                     <Route path="/about/our-director" element={<OurDirector />} />
                     <Route path="/about/life-at-neverdue" element={<LifeAtNeverDue />} />
                     <Route path="/about/become-partner" element={<BecomePartner />} />
+                    <Route path="/about/university-program" element={<UniversityProgram />} />
                 </Routes>
             </div>
 
