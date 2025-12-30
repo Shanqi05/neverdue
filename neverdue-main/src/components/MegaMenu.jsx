@@ -84,7 +84,7 @@ const MegaMenu = ({ activeMenu, setActiveMenu }) => {
                 ],
                 'How To Join Us': [
                     { id: 33, name: 'Life at NeverDue', desc: 'Flexible hours culture.', icon: <Rocket size={24} color="#db2777" />, link: '/about/life-at-neverdue' },
-                    { id: 34, name: 'University Program', desc: 'Elite internships.', icon: <Code size={24} color="#db2777" />, badge: 'Hiring', link: '/about#join' },
+                    { id: 34, name: 'University Program', desc: 'Elite internships.', icon: <Code size={24} color="#db2777" />, badge: 'Hiring', link: '/about/university-program' },
                     { id: 35, name: 'Career Opportunities', desc: 'Join our global team.', icon: <Briefcase size={24} color="#db2777" />, link: '/about#join' },
                 ],
                 'Partner': [
