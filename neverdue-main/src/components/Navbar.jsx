@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { User, ChevronDown } from 'lucide-react';
+import { User, ChevronDown, Menu, X } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabaseClient';
 
 const Navbar = ({ setActiveMenu, activeMenu }) => {
     const navigate = useNavigate();
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     
     const linkStyle = {
         cursor: 'pointer',
@@ -24,12 +25,14 @@ const Navbar = ({ setActiveMenu, activeMenu }) => {
     // Helper function to handle clicking a link
     const handleLinkClick = () => {
         setActiveMenu(null); // Closes the MegaMenu when a page is selected
+        setIsMobileMenuOpen(false); // Close mobile menu
         window.scrollTo(0, 0); // Ensures the new page starts at the top
     };
 
     // Handle user icon click
     const handleUserIconClick = async () => {
         setActiveMenu(null);
+        setIsMobileMenuOpen(false); // Close mobile menu
         
         try {
             const { data: { session } } = await supabase.auth.getSession();
@@ -89,7 +92,13 @@ const Navbar = ({ setActiveMenu, activeMenu }) => {
                         </h1>
                     </Link>
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    {/* Desktop Navigation */}
+                    <div style={{ 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        gap: '8px',
+                    }}
+                    className="desktop-nav">
 
                         {/* 1. Products */}
                         <Link
@@ -134,25 +143,141 @@ const Navbar = ({ setActiveMenu, activeMenu }) => {
                     </div>
                 </div>
 
-                {/* Right: Account Icon */}
-                <div 
-                    onClick={handleUserIconClick}
-                    style={{
-                        cursor: 'pointer',
-                        padding: '10px',
-                        borderRadius: '50%',
-                        transition: 'all 0.3s ease',
-                        backgroundColor: 'transparent',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}
-                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'}
-                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                >
-                    <User size={24} color="#fff" />
+                {/* Right: Account Icon and Hamburger Menu */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                    {/* Account Icon */}
+                    <div 
+                        onClick={handleUserIconClick}
+                        style={{
+                            cursor: 'pointer',
+                            padding: '10px',
+                            borderRadius: '50%',
+                            transition: 'all 0.3s ease',
+                            backgroundColor: 'transparent',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'}
+                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                    >
+                        <User size={24} color="#fff" />
+                    </div>
+
+                    {/* Hamburger Menu Button */}
+                    <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        style={{
+                            display: 'none',
+                            background: 'transparent',
+                            border: 'none',
+                            cursor: 'pointer',
+                            padding: '8px',
+                            color: '#fff',
+                            transition: 'all 0.3s ease'
+                        }}
+                        className="mobile-menu-btn"
+                    >
+                        {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                    </button>
                 </div>
             </div>
+
+            {/* Mobile Menu */}
+            <div 
+                style={{
+                    position: 'fixed',
+                    top: '80px',
+                    left: 0,
+                    width: '100%',
+                    backgroundColor: 'rgba(10, 10, 10, 0.98)',
+                    backdropFilter: 'blur(12px)',
+                    maxHeight: isMobileMenuOpen ? '500px' : '0',
+                    overflow: 'hidden',
+                    transition: 'max-height 0.3s ease',
+                    borderBottom: isMobileMenuOpen ? '1px solid rgba(255,255,255,0.1)' : 'none',
+                    boxShadow: isMobileMenuOpen ? '0 4px 10px rgba(0,0,0,0.3)' : 'none'
+                }}
+                className="mobile-menu"
+            >
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    padding: '20px',
+                    gap: '8px'
+                }}>
+                    {/* Products */}
+                    <Link
+                        to="/products"
+                        style={{
+                            ...linkStyle,
+                            width: '100%',
+                            justifyContent: 'space-between',
+                            backgroundColor: activeMenu === 'products' ? 'rgba(255,255,255,0.1)' : 'transparent'
+                        }}
+                        onClick={handleLinkClick}
+                    >
+                        Products <ChevronDown size={16} />
+                    </Link>
+
+                    {/* Services */}
+                    <Link
+                        to="/services"
+                        style={{
+                            ...linkStyle,
+                            width: '100%',
+                            justifyContent: 'space-between',
+                            backgroundColor: activeMenu === 'services' ? 'rgba(255,255,255,0.1)' : 'transparent'
+                        }}
+                        onClick={handleLinkClick}
+                    >
+                        Services <ChevronDown size={16} />
+                    </Link>
+
+                    {/* About Us */}
+                    <Link
+                        to="/about"
+                        style={{
+                            ...linkStyle,
+                            width: '100%',
+                            justifyContent: 'space-between',
+                            backgroundColor: activeMenu === 'about' ? 'rgba(255,255,255,0.1)' : 'transparent'
+                        }}
+                        onClick={handleLinkClick}
+                    >
+                        About Us <ChevronDown size={16} />
+                    </Link>
+
+                    {/* Contact Us */}
+                    <Link
+                        to="/contact"
+                        style={{
+                            ...linkStyle,
+                            width: '100%'
+                        }}
+                        onClick={handleLinkClick}
+                    >
+                        Contact Us
+                    </Link>
+                </div>
+            </div>
+
+            {/* CSS for responsive behavior */}
+            <style>{`
+                @media (max-width: 768px) {
+                    .desktop-nav {
+                        display: none !important;
+                    }
+                    .mobile-menu-btn {
+                        display: flex !important;
+                    }
+                }
+                @media (min-width: 769px) {
+                    .mobile-menu {
+                        display: none !important;
+                    }
+                }
+            `}</style>
         </nav>
     );
 };

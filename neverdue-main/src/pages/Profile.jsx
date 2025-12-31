@@ -318,7 +318,7 @@ function Profile() {
                     {activeTab === 'dashboard' && (
                         <div className="fade-in">
                             <div className="content-header">
-                                <h1>My Ecosystem</h1>
+                                <h1>My Subscription</h1>
                                 <p>Manage your active services and products.</p>
                             </div>
                             <h3 className="section-label">Active Subscriptions</h3>
