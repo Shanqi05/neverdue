@@ -327,3 +327,40 @@
         padding: 40px 30px;
     }
 }
+
+@media (max-width: 900px) {
+    /* 1. Fix Hero Height & Overlap */
+    .contact-hero {
+        height: auto;
+        min-height: 300px;
+        margin-bottom: 0;
+        clip-path: none;
+        padding: 80px 20px 40px;
+    }
+
+    .contact-hero-content {
+        transform: none;
+    }
+
+    .contact-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    /* 2. Fix Grid Stacking */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-content-wrapper {
+        padding: 0 20px 40px;
+        margin-top: 0;
+    }
+
+    /* 3. Fix Card Padding */
+    .info-details.dark-panel,
+    .form-container {
+        padding: 30px 20px;
+        border-radius: 16px;
+    }
+}
