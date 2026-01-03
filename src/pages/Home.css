@@ -176,3 +176,55 @@
     gap: 30px;
   }
 }
+
+@media (max-width: 768px) {
+    /* 1. Fix Hero Height & Spacing */
+    /* On mobile, 300vh scroll feels too long. We visually tighten elements */
+    .slide-content h1.gradient-text {
+        font-size: 2.5rem; /* Reduced from 4rem */
+        margin-bottom: 15px;
+    }
+
+    .slide-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    /* Hide the bouncing arrow on mobile to save vertical space */
+    .scroll-arrow-container {
+        display: none;
+    }
+
+    /* 2. Fix Globe Size */
+    /* Ensure the globe doesn't blow out the container width */
+    .globe-section {
+        padding: 50px 15px; /* Reduced from 100px */
+        overflow: hidden;   /* Cuts off any canvas overflow */
+    }
+
+    .globe-section canvas {
+        max-width: 100%;    /* Constraints the 3D canvas if applicable */
+    }
+
+    /* 3. Fix "Weird Gap" and Small Video */
+    .video-section {
+        /* Reduced top padding from 100px to 30px to close the gap */
+        padding: 30px 15px 60px 15px;
+        background: radial-gradient(circle at center, #0f172a 0%, #000 100%); /* Smooth transition from globe */
+    }
+
+    .video-container {
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Lighter shadow for mobile */
+    }
+
+    /* 4. Fix Stats Layout */
+    .stats-row {
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .stat-item h3 {
+        font-size: 2rem; /* Make numbers fit better */
+    }
+}
