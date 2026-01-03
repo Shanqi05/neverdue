@@ -564,27 +564,13 @@
     }
 
     .back-btn {
-        position: fixed;
-        top: 95px;
-        left: 20px;
-        z-index: 900;
-
-        background-color: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(5px);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        border: 1px solid #e2e8f0;
-
-        padding: 8px 16px;
-        width: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
     }
-
-    /* Push the hero text down so the button doesn't cover it */
     .pd-hero-content {
         padding-top: 60px;
-    }
-
-    /* Optional: Ensure hero has enough space */
-    .pd-hero {
-        padding-top: 40px;
+        position: relative;
     }
 }
