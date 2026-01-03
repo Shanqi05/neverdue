@@ -228,3 +228,53 @@
   font-weight: 600;
 }
 .buy-btn:hover { background: #deebff; }
+
+@media (max-width: 768px) {
+    /* 1. Fix Header/Hero Padding */
+    .atl-header {
+        height: auto;
+        min-height: 350px;
+        padding: 60px 0;
+        margin-left: 0;
+        margin-right: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .atl-header-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .atl-header-content p {
+        font-size: 1.1rem;
+        padding: 0 15px;
+    }
+
+    /* 2. Fix Section Padding */
+    .atl-section {
+        padding: 40px 20px;
+    }
+
+    /* 3. Fix Grid Layout */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .atl-grid-recommended {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* 4. Filter Buttons Stacking */
+    .atl-filters {
+        gap: 10px;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
