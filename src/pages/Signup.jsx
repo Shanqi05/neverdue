@@ -60,7 +60,7 @@ function Signup() {
                         onChange={(e) => setAgreedToTerms(e.target.checked)}
                     />
                     <label htmlFor="terms">
-                        I agree to the <a href="/terms" target="_blank" rel="noopener noreferrer">Terms and Conditions</a> and <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                        I agree to the <Link to="/terms">Terms and Conditions</Link> and <Link to="/privacy">Privacy Policy</Link>
                     </label>
                 </div>
                 
