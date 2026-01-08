@@ -151,7 +151,7 @@ const Contact = () => {
                                     <div className="form-group">
                                         <label>Full Name</label>
                                         <div className="input-wrapper">
-                                            <span className="input-icon">👤</span>
+                                            {/*<span className="input-icon">👤</span>*/}
                                             {/* ADDED: name, value, onChange */}
                                             <input
                                                 type="text"
@@ -167,7 +167,7 @@ const Contact = () => {
                                     <div className="form-group">
                                         <label>Email Address</label>
                                         <div className="input-wrapper">
-                                            <span className="input-icon">✉️</span>
+                                            {/*<span className="input-icon">✉️</span>*/}
                                             {/* ADDED: name, value, onChange */}
                                             <input
                                                 type="email"
@@ -183,7 +183,7 @@ const Contact = () => {
                                     <div className="form-group">
                                         <label>Subject</label>
                                         <div className="input-wrapper">
-                                            <span className="input-icon">📝</span>
+                                            {/*<span className="input-icon">📝</span>*/}
                                             <input
                                                 type="text"
                                                 name="subject"
