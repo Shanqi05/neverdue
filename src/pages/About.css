@@ -182,3 +182,51 @@
 .fade-in {
   animation: fadeIn 0.6s ease-out;
 }
+
+/* mobile */
+@media (max-width: 768px) {
+    /* 1. Fix Hero Text Overflow */
+    .about-hero-content h1 {
+        font-size: 2.5rem; /* Reduced from 4rem */
+        padding: 0 15px;   /* Add breathing room */
+    }
+
+    .about-hero-content p {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+
+    /* 2. Fix Horizontal Scroll / Overflow */
+    /* The previous minmax(400px) forced the screen to be wider than mobile */
+    .about-row-grid {
+        display: flex;       /* Switch to flex col for better mobile stacking */
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr; /* Force single column */
+    }
+
+    /* 3. Fix Layout Spacing */
+    .about-content-wrapper {
+        padding: 40px 20px; /* Reduced from 80px 10% */
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        padding-left: 15px; /* Tweak border alignment */
+    }
+
+    /* 4. Fix Partner Image Squishing */
+    .partner-feature {
+        padding: 25px;
+        margin-top: 30px;
+    }
+
+    .partner-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}

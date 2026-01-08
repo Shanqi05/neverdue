@@ -104,7 +104,7 @@ const Navbar = ({ setActiveMenu, activeMenu }) => {
                         <Link
                             to="/products"
                             style={{...linkStyle, backgroundColor: activeMenu === 'products' ? 'rgba(255,255,255,0.1)' : 'transparent'}}
-                            onMouseEnter={() => setActiveMenu('products')}
+                            onMouseEnter={() => window.innerWidth > 900 && setActiveMenu('products')}
                             onClick={handleLinkClick}
                         >
                             Products <ChevronDown size={16} style={{ transition: 'transform 0.3s', transform: activeMenu === 'products' ? 'rotate(180deg)' : 'rotate(0)' }} />
@@ -114,7 +114,7 @@ const Navbar = ({ setActiveMenu, activeMenu }) => {
                         <Link
                             to="/services"
                             style={{...linkStyle, backgroundColor: activeMenu === 'services' ? 'rgba(255,255,255,0.1)' : 'transparent'}}
-                            onMouseEnter={() => setActiveMenu('services')}
+                            onMouseEnter={() => window.innerWidth > 900 && setActiveMenu('services')}
                             onClick={handleLinkClick}
                         >
                             Services <ChevronDown size={16} style={{ transition: 'transform 0.3s', transform: activeMenu === 'services' ? 'rotate(180deg)' : 'rotate(0)' }} />
@@ -124,7 +124,7 @@ const Navbar = ({ setActiveMenu, activeMenu }) => {
                         <Link
                             to="/about"
                             style={{...linkStyle, backgroundColor: activeMenu === 'about' ? 'rgba(255,255,255,0.1)' : 'transparent'}}
-                            onMouseEnter={() => setActiveMenu('about')}
+                            onMouseEnter={() => window.innerWidth > 900 && setActiveMenu('about')}
                             onClick={handleLinkClick}
                         >
                             About Us <ChevronDown size={16} style={{ transition: 'transform 0.3s', transform: activeMenu === 'about' ? 'rotate(180deg)' : 'rotate(0)' }} />
