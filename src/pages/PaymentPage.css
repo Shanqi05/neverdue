@@ -192,3 +192,14 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 768px) {
+    .payment-page-container {
+        flex-direction: column;
+    }
+
+    .payment-form-section {
+        border-right: none;
+        border-bottom: 1px solid #f1f5f9;
+    }
+}
